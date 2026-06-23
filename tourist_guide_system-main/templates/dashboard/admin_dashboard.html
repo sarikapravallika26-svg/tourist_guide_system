@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block content %}
+  <section class="section page-hero small-hero">
+    <div class="container hero-small">
+      <span class="eyebrow">Admin Overview</span>
+      <h1>Platform insights at a glance</h1>
+      <p>Review totals, destination mix, and the most active places in a clean summary view.</p>
+    </div>
+  </section>
+
+  <section class="section dashboard-section">
+    <div class="container dashboard-stack">
+      <div class="stats-row">
+        <article class="small-card glass-card">
+          <span class="eyebrow">Users</span>
+          <h3>{{ total_users }}</h3>
+          <p>Registered accounts on the platform.</p>
+        </article>
+        <article class="small-card glass-card">
+          <span class="eyebrow">Destinations</span>
+          <h3>{{ total_destinations }}</h3>
+          <p>Places currently available to browse.</p>
+        </article>
+        <article class="small-card glass-card">
+          <span class="eyebrow">Reviews</span>
+          <h3>{{ total_reviews }}</h3>
+          <p>Traveler reviews submitted so far.</p>
+        </article>
+        <article class="small-card glass-card">
+          <span class="eyebrow">Trips</span>
+          <h3>{{ total_trips }}</h3>
+          <p>Total saved trip plans.</p>
+        </article>
+      </div>
+
+      <div class="dashboard-grid">
+        <article class="dashboard-main glass-card">
+          <div class="dashboard-title">
+            <span class="eyebrow">Breakdown</span>
+            <h2>Category distribution</h2>
+          </div>
+          <ul class="analytics-list">
+            {% for c in category_distribution %}
+              <li><strong>{{ c.category|default:"Uncategorized" }}</strong><span>{{ c.count }}</span></li>
+            {% empty %}
+              <li><strong>No category data yet</strong><span>0</span></li>
+            {% endfor %}
+          </ul>
+        </article>
+
+        <article class="activity-card glass-card dashboard-main">
+          <div class="dashboard-title">
+            <span class="eyebrow">Top Destinations</span>
+            <h2>Most reviewed places</h2>
+          </div>
+          <ul class="popular-list">
+            {% for p in popular %}
+              <li><strong>{{ p.name }}</strong><span>{{ p.reviews }} reviews</span></li>
+            {% empty %}
+              <li><strong>No popular destinations yet</strong><span>0 reviews</span></li>
+            {% endfor %}
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+{% endblock %}

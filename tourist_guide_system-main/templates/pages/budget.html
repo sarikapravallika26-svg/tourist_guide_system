@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <section class="section page-hero small-hero">
+    <div class="container hero-small">
+      <span class="eyebrow">Budget Calculator</span>
+      <h1>Estimate your travel costs</h1>
+      <p>Plan smarter with accurate accommodation, transport, and food budget estimates.</p>
+    </div>
+  </section>
+
+  <section class="section budget-section">
+    <div class="container budget-grid">
+      <div class="budget-form glass-card">
+        <h2>Budget Inputs</h2>
+        <label>Number of Days</label>
+        <input type="number" id="budgetDays" min="1" value="4" />
+        <label>Hotel Category</label>
+        <select id="hotelCategory">
+          <option value="standard">Standard</option>
+          <option value="premium">Premium</option>
+          <option value="luxury">Luxury</option>
+        </select>
+        <label>Transportation Type</label>
+        <select id="transportType">
+          <option value="economy">Economy</option>
+          <option value="comfort">Comfort</option>
+          <option value="private">Private</option>
+        </select>
+        <label>Food Budget</label>
+        <select id="foodBudget">
+          <option value="economy">Economy</option>
+          <option value="balanced">Balanced</option>
+          <option value="premium">Premium</option>
+        </select>
+        <button id="calculateBudget" class="btn btn-primary">Calculate</button>
+      </div>
+
+      <div class="budget-results glass-card">
+        <h2>Budget Estimate</h2>
+        <div class="budget-item"><span>Accommodation</span><strong id="accommodationCost">&#8377;0</strong></div>
+        <div class="budget-item"><span>Transportation</span><strong id="transportCost">&#8377;0</strong></div>
+        <div class="budget-item"><span>Food</span><strong id="foodCost">&#8377;0</strong></div>
+        <div class="budget-total glass-card"><span>Total Estimated Budget</span><strong id="totalBudget">&#8377;0</strong></div>
+        <div class="chart-card glass-card">
+          <canvas id="budgetChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{% static 'js/budget.js' %}"></script>
+{% endblock %}

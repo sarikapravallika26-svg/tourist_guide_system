@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block content %}
+  <section class="section page-hero small-hero">
+    <div class="container hero-small">
+      <span class="eyebrow">Create Account</span>
+      <h1>Start your travel profile</h1>
+      <p>Join the platform to plan journeys, save destinations, and keep everything in one place.</p>
+    </div>
+  </section>
+
+  <section class="section auth-section">
+    <div class="container auth-shell">
+      <div class="auth-copy glass-card">
+        <span class="eyebrow">Get Started</span>
+        <h2>Build your smart tourist profile</h2>
+        <p>Once you sign up, you can organize your travel ideas, save favorites, and track upcoming plans.</p>
+        <ul class="feature-list">
+          <li>Personalized travel dashboard</li>
+          <li>Favorites and review history</li>
+          <li>Trip planning in one workflow</li>
+        </ul>
+      </div>
+      <div class="auth-card glass-card">
+        <h2>Sign Up</h2>
+        <form method="post" enctype="multipart/form-data" class="stack-form">
+          {% csrf_token %}
+          {% if form.non_field_errors %}
+            <div class="form-errors">{{ form.non_field_errors }}</div>
+          {% endif %}
+          <div class="form-field">
+            <label for="{{ form.full_name.id_for_label }}">Full Name</label>
+            {{ form.full_name }}
+            {{ form.full_name.errors }}
+          </div>
+          <div class="form-field">
+            <label for="{{ form.email.id_for_label }}">Email</label>
+            {{ form.email }}
+            {{ form.email.errors }}
+          </div>
+          <div class="form-field">
+            <label for="{{ form.password.id_for_label }}">Password</label>
+            {{ form.password }}
+            {{ form.password.errors }}
+          </div>
+          <div class="form-field">
+            <label for="{{ form.confirm_password.id_for_label }}">Confirm Password</label>
+            {{ form.confirm_password }}
+            {{ form.confirm_password.errors }}
+          </div>
+          <button type="submit" class="btn btn-primary">Create Account</button>
+        </form>
+        <p class="form-note">Already have an account? <a href="{% url 'login' %}">Login here</a>.</p>
+      </div>
+    </div>
+  </section>
+{% endblock %}

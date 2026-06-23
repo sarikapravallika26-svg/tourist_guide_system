@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Assistant | Smart Tourist Guide System</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <div class="page-loader" id="pageLoader"></div>
+  <div class="progress-bar" id="scrollProgress"></div>
+  <header class="site-header sticky">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">Tourist Guide</a>
+      <nav class="navigation" id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="planner.html">Trip Planner</a>
+        <a href="budget.html">Budget</a>
+        <a href="assistant.html" class="active">Assistant</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="admin.html">Admin</a>
+      </nav>
+      <div class="header-actions">
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle dark mode">🌙</button>
+        <button class="icon-btn nav-toggle" id="navToggle" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section page-hero small-hero">
+      <div class="container hero-small">
+        <span class="eyebrow">Travel Assistant</span>
+        <h1>Ask your travel assistant</h1>
+        <p>Get quick travel suggestions, destination tips, and planning advice instantly.</p>
+      </div>
+    </section>
+
+    <section class="section assistant-section">
+      <div class="container assistant-grid">
+        <div class="assistant-panel glass-card">
+          <div class="assistant-header">
+            <div>
+              <span class="eyebrow">AI Chatbot</span>
+              <h2>Travel Assistant</h2>
+            </div>
+            <div class="assistant-status">Online</div>
+          </div>
+          <div class="chat-window" id="chatWindow"></div>
+          <form id="assistantForm" class="chat-form">
+            <input type="text" id="assistantInput" placeholder="Ask about destinations, budgets, or travel tips" autocomplete="off" required />
+            <button type="submit" class="btn btn-primary">Send</button>
+          </form>
+        </div>
+        <div class="assistant-suggestions glass-card">
+          <h2>Suggested questions</h2>
+          <button class="suggestion-btn">Best places in Goa?</button>
+          <button class="suggestion-btn">Budget trip to Hyderabad?</button>
+          <button class="suggestion-btn">Best season to visit Kashmir?</button>
+          <button class="suggestion-btn">Top wildlife safaris in India?</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Smart Tourist Guide System</p>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Support</a>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+  <div id="toast" class="toast"></div>
+
+  <script src="js/main.js"></script>
+  <script src="js/chatbot.js"></script>
+</body>
+</html>
