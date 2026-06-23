@@ -1,0 +1,85 @@
+@media (max-width: 1040px) {
+  .container {
+    width: min(960px, calc(100% - 2rem));
+  }
+}
+
+@media (max-width: 860px) {
+  .header-inner {
+    flex-wrap: wrap;
+  }
+  .navigation {
+    gap: 1rem;
+  }
+  .featured-grid,
+  .card-grid,
+  .destination-grid,
+  .stats-row,
+  .favorites-grid,
+  .trip-history-grid,
+  .auth-shell,
+  .dashboard-grid,
+  .admin-cards,
+  .analytics-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  body {
+    font-size: 15px;
+  }
+  .site-header {
+    position: fixed;
+    padding: 1rem 1rem;
+  }
+  .navigation {
+    display: none;
+  }
+  .hero-section,
+  .page-hero {
+    min-height: 520px;
+  }
+  .hero-content,
+  .page-hero .container {
+    text-align: left;
+  }
+  .search-filter-row,
+  .newsletter-card,
+  .assistant-grid,
+  .planner-grid,
+  .budget-grid,
+  .auth-shell,
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  .header-actions {
+    margin-left: auto;
+  }
+  .navigation.active {
+    display: grid;
+    background: rgba(15, 23, 42, 0.95);
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 80px;
+    padding: 1rem;
+    border-radius: 20px;
+  }
+  .site-footer {
+    text-align: center;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-content h1,
+  .page-hero h1 {
+    font-size: 2.3rem;
+  }
+  .search-box input,
+  .search-box button,
+  .newsletter-form input,
+  .newsletter-form button {
+    font-size: 0.95rem;
+  }
+}

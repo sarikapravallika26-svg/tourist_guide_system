@@ -1,0 +1,19 @@
+.dashboard-section {
+  padding: 4rem 0;
+}
+
+.stats-row {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.stat-card {
+  padding: 1.75rem;
+}
+
+.activity-card {
+  padding: 1.75rem;
+}
+
+.favorites-grid {
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}

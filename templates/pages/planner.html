@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <section class="section page-hero small-hero">
+    <div class="container hero-small">
+      <span class="eyebrow">Trip Planner</span>
+      <h1>Build your perfect itinerary</h1>
+      <p>Create a customized day-by-day travel plan with budget-friendly choices.</p>
+    </div>
+  </section>
+
+  <section class="section planner-section">
+    <div class="container planner-grid">
+      <div class="plan-form glass-card">
+        <h2>Trip Planner</h2>
+        <form method="post" id="plannerForm">{% csrf_token %}
+          <label>Destination</label>
+          <select name="destination" id="planDestination">
+            {% for d in destinations %}
+              <option value="{{ d.id }}">{{ d.name }}</option>
+            {% endfor %}
+          </select>
+          <label>Start Date</label>
+          <input type="date" name="start_date" id="planStart" />
+          <label>End Date</label>
+          <input type="date" name="end_date" id="planEnd" />
+          <label>Travelers</label>
+          <input type="number" name="travelers" min="1" value="2" id="planTravelers" />
+          <label>Estimated Budget</label>
+          <input type="number" name="estimated_budget" min="0" step="0.01" placeholder="25000" id="planBudget" />
+          <input type="hidden" name="itinerary" id="generatedItinerary" />
+          <button type="submit" class="btn btn-primary">Generate Trip</button>
+        </form>
+      </div>
+      <div class="plan-preview glass-card" id="planPreview">
+        <h2>Sample Itinerary</h2>
+        <div class="itinerary-item">
+          <h3>Day 1</h3>
+          <p>Arrival and local sightseeing with a relaxed beach evening.</p>
+        </div>
+        <div class="itinerary-item">
+          <h3>Day 2</h3>
+          <p>Historical attractions and cultural museum visits.</p>
+        </div>
+        <div class="itinerary-item">
+          <h3>Day 3</h3>
+          <p>Adventure activities and sunset dinner by the water.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/planner.js' %}"></script>
+{% endblock %}

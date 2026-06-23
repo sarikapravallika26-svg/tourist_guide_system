@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Destination Details | Smart Tourist Guide System</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <div class="page-loader" id="pageLoader"></div>
+  <div class="progress-bar" id="scrollProgress"></div>
+  <header class="site-header sticky">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">Tourist Guide</a>
+      <nav class="navigation" id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="planner.html">Trip Planner</a>
+        <a href="budget.html">Budget</a>
+        <a href="assistant.html">Assistant</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="admin.html">Admin</a>
+      </nav>
+      <div class="header-actions">
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle dark mode">🌙</button>
+        <button class="icon-btn nav-toggle" id="navToggle" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section page-hero small-hero">
+      <div class="container hero-small">
+        <span class="eyebrow">Destination Details</span>
+        <h1>Goa Beach Escape</h1>
+        <p>Experience sun-soaked sands, water sports, and vibrant coastal culture with ease.</p>
+      </div>
+    </section>
+
+    <section class="section section-highlight details-overview">
+      <div class="container details-grid">
+        <div class="gallery-card glass-card">
+          <div class="gallery-main" id="galleryMain">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80" alt="Goa main" />
+          </div>
+          <div class="gallery-thumbs" id="galleryThumbs">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80" alt="Goa 1" />
+            <img loading="lazy" src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=400&q=80" alt="Goa 2" />
+            <img loading="lazy" src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=400&q=80" alt="Goa 3" />
+          </div>
+        </div>
+        <div class="info-card glass-card">
+          <div class="info-header">
+            <div>
+              <span class="eyebrow">Overview</span>
+              <h2>Goa Beach Escape</h2>
+              <p class="rating">4.9 ⭐ • Coastal paradise in India</p>
+            </div>
+            <div class="pill">Best For: Beaches</div>
+          </div>
+          <div class="info-list">
+            <div><strong>Entry Fee</strong><span>Free access to beaches</span></div>
+            <div><strong>Opening Hours</strong><span>06:00 AM - 09:00 PM</span></div>
+            <div><strong>Best Time</strong><span>November - February</span></div>
+            <div><strong>Travel Tips</strong><span>Book beach shacks early and pack sunscreen.</span></div>
+          </div>
+          <div class="info-text">
+            <h3>About the destination</h3>
+            <p>Goa offers a vibrant coastal holiday with golden beaches, seafood cuisine, and lively nightlife. Relax by the Arabian Sea, explore hidden coves, and discover Portuguese heritage.</p>
+          </div>
+          <div class="info-text">
+            <h3>History</h3>
+            <p>From Portuguese colonial roots to contemporary beach culture, Goa blends heritage architecture with modern tourism for an unforgettable coastal experience.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section map-section">
+      <div class="container section-header">
+        <span class="eyebrow">Map</span>
+        <h2>Travel location preview</h2>
+      </div>
+      <div class="map-placeholder glass-card">
+        <p>Map integration placeholder for Leaflet or Google Maps.</p>
+      </div>
+    </section>
+
+    <section class="section nearby-section">
+      <div class="container section-header">
+        <span class="eyebrow">Nearby Attractions</span>
+        <h2>Must-visit spots around Goa</h2>
+      </div>
+      <div class="nearby-grid">
+        <article class="small-card glass-card">
+          <h3>Basilica of Bom Jesus</h3>
+          <p>UNESCO site with Baroque architecture and historic relics.</p>
+        </article>
+        <article class="small-card glass-card">
+          <h3>Fort Aguada</h3>
+          <p>17th-century fort with panoramic sea views and lighthouse.</p>
+        </article>
+        <article class="small-card glass-card">
+          <h3>Palolem Beach</h3>
+          <p>Secluded shore with calm waters and beachside cafes.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reviews-section">
+      <div class="container section-header">
+        <span class="eyebrow">Reviews</span>
+        <h2>Traveler feedback</h2>
+      </div>
+      <div class="review-grid">
+        <article class="review-card glass-card">
+          <div class="review-author"><img loading="lazy" src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?auto=format&fit=crop&w=100&q=80" alt="Traveler" /><div><strong>Ananya</strong><span>5.0 ⭐</span></div></div>
+          <p>"Excellent beach vibes and friendly service. The trip planning suggestions were great."</p>
+        </article>
+        <article class="review-card glass-card">
+          <div class="review-author"><img loading="lazy" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80" alt="Traveler" /><div><strong>Marcus</strong><span>4.8 ⭐</span></div></div>
+          <p>"Beautiful coastline with plenty of activities. Loved the snapshot itinerary for our weekend stay."</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Smart Tourist Guide System</p>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Support</a>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+  <div id="toast" class="toast"></div>
+
+  <script src="js/main.js"></script>
+  <script src="js/details.js"></script>
+</body>
+</html>

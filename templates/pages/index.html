@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% block content %}
+  <section class="hero-section" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <span class="eyebrow">Smart Tourist Guide System</span>
+      <h1>Explore the World with Confidence</h1>
+      <p>Find your next destination and plan unforgettable journeys with expert guidance, budgets, and reviews.</p>
+      <div class="hero-actions">
+        <div class="search-box">
+          <input type="search" id="heroSearch" list="destinationSuggestions" placeholder="Search destinations, cities or experiences" />
+          <datalist id="destinationSuggestions"></datalist>
+          <button id="heroSearchBtn" class="btn btn-primary">Explore</button>
+        </div>
+        <a class="btn btn-primary" href="{% url 'destinations' %}">Browse Destinations</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card"><strong class="counter" data-target="500">0</strong>+ Destinations</div>
+        <div class="stat-card"><strong class="counter" data-target="50000">0</strong>+ Tourists</div>
+        <div class="stat-card"><strong class="counter" data-target="10000">0</strong>+ Reviews</div>
+        <div class="stat-card"><strong class="counter" data-target="100">0</strong>+ Cities Covered</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-highlight" id="popular">
+    <div class="container section-header">
+      <span class="eyebrow">Popular Destinations</span>
+      <h2>Discover trending tourist hotspots</h2>
+    </div>
+    <div class="card-grid popular-grid">
+      {% for d in destinations|slice:":8" %}
+      <article class="destination-card glass-card">
+        {% if d.image %}
+        <img loading="lazy" src="{{ d.image.url }}" alt="{{ d.name }}" />
+        {% else %}
+        <img loading="lazy" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="{{ d.name }}" />
+        {% endif %}
+        <div class="card-body">
+          <h3>{{ d.name }}</h3>
+          <p class="rating">{{ d.rating }} &#9733; &bull; {{ d.state }}, {{ d.country }}</p>
+          <p>{{ d.description|truncatewords:20 }}</p>
+          <a href="{% url 'destination_detail' pk=d.id %}" class="btn btn-secondary">View Details</a>
+        </div>
+      </article>
+      {% empty %}
+      <p>No destinations available yet.</p>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="section section-features" id="features">
+    <div class="container section-header">
+      <span class="eyebrow">Why Choose Us</span>
+      <h2>Travel smarter with expert planning tools</h2>
+    </div>
+    <div class="feature-grid">
+      <article class="feature-card glass-card">
+        <h3>Smart Travel Planning</h3>
+        <p>Customized itineraries based on your preferences, pace, and budget.</p>
+      </article>
+      <article class="feature-card glass-card">
+        <h3>Budget Estimation</h3>
+        <p>Detailed cost forecasts for hotels, transport, and meals.</p>
+      </article>
+      <article class="feature-card glass-card">
+        <h3>Local Guides</h3>
+        <p>Trusted local recommendations for authentic experiences.</p>
+      </article>
+      <article class="feature-card glass-card">
+        <h3>Personalized Recommendations</h3>
+        <p>Destination suggestions tailored to your travel interests.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section-testimonials" id="testimonials">
+    <div class="container section-header">
+      <span class="eyebrow">Testimonials</span>
+      <h2>What travelers say about us</h2>
+    </div>
+    <div class="testimonial-slider glass-card" id="testimonialSlider">
+      <div class="testimonial-item active">
+        <p>"The itinerary planner made our family trip effortless. Every detail was perfect!"</p>
+        <strong>Priya Sharma</strong>
+        <span>Delhi, India</span>
+      </div>
+      <div class="testimonial-item">
+        <p>"I loved the budget calculator and travel recommendations. Highly recommended."</p>
+        <strong>Liam Carter</strong>
+        <span>London, UK</span>
+      </div>
+      <div class="testimonial-item">
+        <p>"The destination suggestions were spot on, and the UI is beautiful and easy to use."</p>
+        <strong>Sophia Lee</strong>
+        <span>Seoul, South Korea</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-newsletter" id="newsletter">
+    <div class="container newsletter-card glass-card">
+      <div>
+        <span class="eyebrow">Newsletter</span>
+        <h2>Stay updated with new travel deals</h2>
+        <p>Get curated destination news, exclusive offers, and insider tips delivered to your inbox.</p>
+      </div>
+      <form id="newsletterForm" class="newsletter-form">
+        <input type="email" id="newsletterEmail" placeholder="Enter your email address" required />
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+    </div>
+  </section>
+{% endblock %}

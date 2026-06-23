@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard | Smart Tourist Guide System</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/admin.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <div class="page-loader" id="pageLoader"></div>
+  <div class="progress-bar" id="scrollProgress"></div>
+  <div class="admin-shell">
+    <aside class="admin-sidebar glass-card">
+      <div class="brand-block"><h2>Admin Panel</h2></div>
+      <nav class="admin-nav">
+        <a href="#dashboard" class="active">Dashboard</a>
+        <a href="#users">Users</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#analytics">Analytics</a>
+        <a href="#settings">Settings</a>
+      </nav>
+    </aside>
+    <main class="admin-main">
+      <header class="admin-header">
+        <div>
+          <h1>Admin Dashboard</h1>
+          <p>Manage platform content and analytics from one panel.</p>
+        </div>
+        <div class="admin-header-actions">
+          <a href="index.html" class="btn btn-secondary">← Back to Home</a>
+          <button id="themeToggle" class="icon-btn" aria-label="Toggle dark mode">🌙</button>
+        </div>
+      </header>
+
+      <section class="admin-cards">
+        <article class="admin-card"><h3>Total Users</h3><p>1,250</p></article>
+        <article class="admin-card"><h3>Total Destinations</h3><p>280</p></article>
+        <article class="admin-card"><h3>Total Reviews</h3><p>7,800</p></article>
+        <article class="admin-card"><h3>Monthly Visitors</h3><p>45,000</p></article>
+      </section>
+
+      <section class="analytics-section" id="analytics">
+        <div class="analytics-card glass-card">
+          <div class="section-header"><span class="eyebrow">Analytics</span><h2>User Growth</h2></div>
+          <canvas id="userGrowthChart"></canvas>
+        </div>
+        <div class="analytics-card glass-card">
+          <div class="section-header"><span class="eyebrow">Analytics</span><h2>Destination Popularity</h2></div>
+          <canvas id="destinationChart"></canvas>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

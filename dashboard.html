@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Dashboard | Smart Tourist Guide System</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <div class="page-loader" id="pageLoader"></div>
+  <div class="progress-bar" id="scrollProgress"></div>
+  <header class="site-header sticky">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">Tourist Guide</a>
+      <nav class="navigation" id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="planner.html">Trip Planner</a>
+        <a href="budget.html">Budget</a>
+        <a href="assistant.html">Assistant</a>
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="admin.html">Admin</a>
+      </nav>
+      <div class="header-actions">
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle dark mode">🌙</button>
+        <button class="icon-btn nav-toggle" id="navToggle" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section page-hero small-hero">
+      <div class="container hero-small">
+        <span class="eyebrow">User Dashboard</span>
+        <h1>Welcome back, traveler</h1>
+        <p>Manage saved journeys, reviews and favorite destinations from one place.</p>
+      </div>
+    </section>
+
+    <section class="section dashboard-section">
+      <div class="container dashboard-grid">
+        <aside class="profile-card glass-card">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80" alt="Profile" />
+          <h3>Arjun Patel</h3>
+          <p>arjun.patel@email.com</p>
+          <div class="profile-meta">
+            <div><strong>12</strong><span>Saved Destinations</span></div>
+            <div><strong>6</strong><span>Planned Trips</span></div>
+          </div>
+        </aside>
+
+        <div class="dashboard-main">
+          <div class="stats-row">
+            <article class="stat-card glass-card">
+              <h3>Saved Destinations</h3>
+              <p>18</p>
+            </article>
+            <article class="stat-card glass-card">
+              <h3>Planned Trips</h3>
+              <p>6</p>
+            </article>
+            <article class="stat-card glass-card">
+              <h3>Reviews Submitted</h3>
+              <p>24</p>
+            </article>
+            <article class="stat-card glass-card">
+              <h3>Favorites</h3>
+              <p>11</p>
+            </article>
+          </div>
+
+          <div class="activity-card glass-card">
+            <div class="section-header">
+              <span class="eyebrow">Recent Activities</span>
+              <h2>Latest travel updates</h2>
+            </div>
+            <ul class="activity-list">
+              <li>Saved Maldives beach resort to favorites.</li>
+              <li>Reviewed Kyoto heritage tour.</li>
+              <li>Planned a 5-day Goa itinerary.</li>
+              <li>Subscribed to premium travel alerts.</li>
+            </ul>
+          </div>
+
+          <div class="favorites-grid">
+            <article class="favorite-card glass-card"><h3>Goa</h3><p>Beach escape</p></article>
+            <article class="favorite-card glass-card"><h3>Swiss Alps</h3><p>Mountain retreat</p></article>
+            <article class="favorite-card glass-card"><h3>Kyoto</h3><p>Culture trip</p></article>
+            <article class="favorite-card glass-card"><h3>Dubai</h3><p>Luxury search</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Smart Tourist Guide System</p>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Support</a>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+  <div id="toast" class="toast"></div>
+
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

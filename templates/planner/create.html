@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block content %}
+  <section class="section page-hero small-hero">
+    <div class="container hero-small">
+      <span class="eyebrow">Trip Planner</span>
+      <h1>Create a travel plan</h1>
+      <p>Build a clean itinerary with destination, dates, group size, and budget in one form.</p>
+    </div>
+  </section>
+
+  <section class="section planner-section">
+    <div class="container planner-grid">
+      <article class="plan-form glass-card">
+        <h2>Create Trip</h2>
+        <form method="post" class="stack-form">
+          {% csrf_token %}
+          <div class="form-field">
+            <label for="legacyDestination">Destination</label>
+            <select name="destination" id="legacyDestination">
+              {% for d in destinations %}
+                <option value="{{ d.id }}">{{ d.name }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="legacyStart">Start Date</label>
+            <input type="date" name="start_date" id="legacyStart">
+          </div>
+          <div class="form-field">
+            <label for="legacyEnd">End Date</label>
+            <input type="date" name="end_date" id="legacyEnd">
+          </div>
+          <div class="form-field">
+            <label for="legacyTravelers">Travelers</label>
+            <input type="number" name="travelers" value="1" min="1" id="legacyTravelers">
+          </div>
+          <div class="form-field">
+            <label for="legacyBudget">Budget</label>
+            <input type="number" name="estimated_budget" step="0.01" min="0" id="legacyBudget">
+          </div>
+          <div class="form-field">
+            <label for="legacyItinerary">Itinerary Notes</label>
+            <textarea name="itinerary" id="legacyItinerary" placeholder="Add trip notes, goals, or must-see places"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Plan Trip</button>
+        </form>
+      </article>
+
+      <article class="plan-preview glass-card">
+        <h2>Planning Tips</h2>
+        <div class="itinerary-item">
+          <h3>Keep it realistic</h3>
+          <p>Limit the number of major attractions each day so your itinerary stays comfortable.</p>
+        </div>
+        <div class="itinerary-item">
+          <h3>Budget clearly</h3>
+          <p>Split your estimate into stay, transport, food, and activities for easier tracking.</p>
+        </div>
+        <div class="itinerary-item">
+          <h3>Leave buffer time</h3>
+          <p>Add room for travel delays, weather changes, and spontaneous local experiences.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+{% endblock %}
